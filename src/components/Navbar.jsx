@@ -9,7 +9,7 @@ const Navbar = () => {
   const [menuItems, setMenuItems] = useState(false);
 
   return (
-    <div>
+    <div className="">
       {menuItems ? (
         <nav
           className=" w-full bg-black  relative top-0
@@ -56,8 +56,8 @@ const Navbar = () => {
         </nav>
       ) : (
         <nav
-          className="fixed w-[93%] flex items-center py-3  top-0
-      z-20 bg-transparent  justify-between  rounded-lg shadow-xl"
+          className="fixed  flex items-center py-3  top-0
+      z-20 bg lg:w-[80%] my-3 w-full mx-0 lg:mx-20 lg:my-5 justify-between  rounded-lg "
         >
           <Link
             to="/"
@@ -87,8 +87,8 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="flex items-center gap-2">
-            <h1 className=" px-5 py-1 rounded-3xl border-2">connect</h1>
+          <div className="flex mx-7 items-center gap-3">
+            <h1 className=" px-5  py-1 rounded-3xl border-2">connect</h1>
 
             <div onClick={() => setMenuItems(!menuItems)} className="lg:hidden">
               <img src={menuIcon} alt="menu" />

@@ -66,7 +66,12 @@
   white-space: nowrap; /* Prevent content from wrapping to the next line */
   border: 1px solid #ccc; /* Optional: Add border for better visibility */
 }
+.bg {
+  border-radius: 10000px;
+  background: rgba(0, 0, 0, 0.18);
 
+  backdrop-filter: blur(15px);
+}
 .content {
   display: inline-block; /* Make content appear in a single line */
   white-space: normal; /* Allow content to wrap within the container */
