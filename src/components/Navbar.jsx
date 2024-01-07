@@ -1,12 +1,15 @@
-import { useState } from "react";
+import React from "react";
+import { useState,useCallback } from "react";
 import { Link } from "react-router-dom";
 import { navLinks } from "../constants";
 import { logo, menuIcon, xIcon } from "../assets";
-import React from "react";
+import { connectToAstrolith } from "../lib/astrolith5/connection";
+import { useAuth } from "../contexts/auth";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [menuItems, setMenuItems] = useState(false);
+  const {setConnected,connections} = useAuth();
 
   return (
     <div className="">
@@ -50,9 +53,9 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <h1 className="text-center py-3 capitalize text-xl m-10 rounded-3xl border-2">
+          <button onClick={async()=>{await connections()}} className="text-center py-3 capitalize text-xl m-10 rounded-3xl border-2">
             connect
-          </h1>
+          </button>
         </nav>
       ) : (
         <nav
@@ -88,7 +91,7 @@ const Navbar = () => {
           </ul>
 
           <div className="flex mx-7 items-center gap-3">
-            <h1 className=" px-5  py-1 rounded-3xl border-2">connect</h1>
+            <button onClick={()=>connections()} className=" px-5  py-1 rounded-3xl border-2">connect</button>
 
             <div onClick={() => setMenuItems(!menuItems)} className="lg:hidden">
               <img src={menuIcon} alt="menu" />
