@@ -50,7 +50,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <h1 className="text-center py-3 capitalize text-xl m-10 rounded-3xl border-2">
+          <h1 className=" cursor-pointer text-center py-3 capitalize text-xl m-10 rounded-3xl border-2">
             connect
           </h1>
         </nav>
