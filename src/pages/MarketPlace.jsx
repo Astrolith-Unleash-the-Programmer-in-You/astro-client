@@ -4,13 +4,13 @@ import { useState } from "react";
 import { Diamond, coin, magicPotion } from "../assets";
 import { dashLinks } from "../constants";
 import DashboardContent from "../components/DashboardContent";
-import MarketPlace from "../components/MarketPlaceContent";
 import Certificate from "../components/Certificate";
 import { Link } from "react-router-dom";
+import MarketPlaceContent from "../components/MarketPlaceContent";
 import { Navbar } from "../components";
 
-const Dashboard = () => {
-  const [active, setActive] = useState("Dashboard");
+const MarketPlace = () => {
+  const [active, setActive] = useState("MarketPlace");
 
   return (
     <div>
@@ -61,11 +61,11 @@ const Dashboard = () => {
               className={`${
                 active === Link.title ? " bg-rose-400" : "text-white"
               }
-             ${
-               Link.title
-                 ? "hover:text-white py-2 rounded-md text-center bg-[#2E2E2E] text-[18px] font-medium cursor-pointer"
-                 : ""
-             }`}
+           ${
+             Link.title
+               ? "hover:text-white py-2 rounded-md text-center bg-[#2E2E2E] text-[18px] font-medium cursor-pointer"
+               : ""
+           }`}
               onClick={() => setActive(Link.title)}
             >
               <h1>{Link.title}</h1>
@@ -75,11 +75,11 @@ const Dashboard = () => {
 
         {/* right */}
         {active === "Dashboard" && <DashboardContent />}
-        {active === "MarketPlace" && <MarketPlace />}
+        {active === "MarketPlace" && <MarketPlaceContent />}
         {active === "Certificate" && <Certificate />}
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default MarketPlace;

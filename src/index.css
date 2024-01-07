@@ -72,6 +72,29 @@
 
   backdrop-filter: blur(15px);
 }
+.cert {
+  display: flex;
+  width: 670px;
+  height: 456px;
+  /* padding: 24px 32px; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background: #0d0d0d;
+  flex-shrink: 0;
+}
+.text {
+  color: #b8a59d;
+
+  text-shadow: 0px 1.276px 0px #080206;
+  font-family: Clash;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21.963px; /* 137.269% */
+  letter-spacing: -0.56px;
+}
 .content {
   display: inline-block; /* Make content appear in a single line */
   white-space: normal; /* Allow content to wrap within the container */

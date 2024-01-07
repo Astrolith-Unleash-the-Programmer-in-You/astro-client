@@ -12,7 +12,7 @@ const Navbar = () => {
     <div className="">
       {menuItems ? (
         <nav
-          className=" w-full bg-black  relative top-0
+          className=" w-full fixed bg-black  top-0
         z-20   justify-between  rounded-lg shadow-xl"
         >
           <div className="flex justify-between items-center">

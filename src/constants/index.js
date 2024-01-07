@@ -44,6 +44,7 @@ import {
   player4,
   silver,
 } from "../assets";
+import { book, crest, key } from "../assets/marketplace";
 import {
   certificate,
   tsilver,
@@ -61,7 +62,7 @@ const navLinks = [
     img: home,
   },
   {
-    id: "marketPlace",
+    id: "marketplace",
     title: "MarketPlace",
     img: marketplace,
   },
@@ -71,7 +72,7 @@ const navLinks = [
     img: lore,
   },
   {
-    id: "about",
+    id: "/",
     title: "About",
     img: about,
   },
@@ -96,12 +97,12 @@ const topPlayers = [
     userName: "Diamond Level",
     exp: "23,988",
   },
-  {
-    img: player4,
-    handle: "@Justinno322",
-    userName: "Diamond Level",
-    exp: "23,988",
-  },
+  // {
+  //   img: player4,
+  //   handle: "@Justinno322",
+  //   userName: "Diamond Level",
+  //   exp: "23,988",
+  // },
 ];
 
 const dashLinks = [
@@ -195,8 +196,8 @@ const achievements = [
 
 const marketItems = [
   {
-    img: axe,
-    name: "axe",
+    img: book,
+    name: "spells ",
     coinImg: coin,
     coinNo: "45",
   },
@@ -225,6 +226,12 @@ const marketItems = [
     coinNo: "45",
   },
   {
+    img: book,
+    name: "blade ",
+    coinImg: coin,
+    coinNo: "45",
+  },
+  {
     img: magicPotion,
     name: " potion ",
     coinImg: coin,
@@ -238,6 +245,18 @@ const marketItems = [
   },
   {
     img: knife,
+    name: "blade",
+    coinImg: coin,
+    coinNo: "45",
+  },
+  {
+    img: crest,
+    name: "blade",
+    coinImg: coin,
+    coinNo: "45",
+  },
+  {
+    img: key,
     name: "blade",
     coinImg: coin,
     coinNo: "45",

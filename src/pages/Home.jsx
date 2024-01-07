@@ -33,6 +33,8 @@ const Home = () => {
 
         <img className="m-auto mt-20" src={title} />
 
+        <TopPlayers />
+
         <img className="m-auto mt-20" src={tech} />
 
         <img className="m-auto mt-20" src={footer} />
