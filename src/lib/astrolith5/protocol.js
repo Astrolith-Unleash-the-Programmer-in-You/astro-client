@@ -208,6 +208,11 @@ export class AstrolithProtocol {
                         "can": "write"
                     },
                     {
+                        "who": "recipient",
+                        "of":"didResolver",
+                        "can": "write"
+                    },
+                    {
                         "who": "anyone",
                         "can": "read"
                     }

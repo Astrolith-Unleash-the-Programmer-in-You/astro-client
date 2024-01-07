@@ -6,12 +6,6 @@
     *@dev : This class manages the player profile
     **/
 export class PlayerProfile {
-
-    profileFilter={
-        protocol:this.protocol,
-        protocolPath:"profile",
-        schema:this.profileSchema,
-    }
     constructor(
         web5,
         protocol,
@@ -21,6 +15,11 @@ export class PlayerProfile {
         this.web5 = web5;
         this.profileSchema = profileSchema;
         this.protocolID = protocolID;
+        this.profileFilter = {
+            protocol,
+            protocolPath: "profile",
+            schema:profileSchema,
+        };
 
     }
 

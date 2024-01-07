@@ -4,17 +4,17 @@
 *@dev : This class manages users and protocol fighters for astrolith
 **/
 export class Fighters {
-    fighterFilter = {
-        protocol: this.protocol,
-        protocolPath: "fighterCharacters",
-        schema: this.fighterCharacterSchema,
-    };
 
     constructor(web5, protocol, fighterCharacterSchema, protocolID) {
         this.web5 = web5;
         this.protocolID = protocolID;
         this.protocol = protocol;
         this.fighterCharacterSchema = fighterCharacterSchema;
+        fighterFilter = {
+            protocol,
+            protocolPath: "fighterCharacters",
+            schema:fighterCharacterSchema,
+        };
     }
 
     //get a fighter from the protocol

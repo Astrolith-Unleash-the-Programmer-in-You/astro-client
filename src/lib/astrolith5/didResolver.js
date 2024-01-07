@@ -13,34 +13,43 @@ export class AstrolithDIDResolver {
 			protocol: protocol,
 			protocolPath: "didResolver",
 			schema: didSchema,
+			dataFormat: "application/json",
 		};
-
 	}
-	readOrCreate = async()=>{
+	readOrCreate = async(userDID)=>{
 
-		const { record } = await this.web5.dwn.records.read({
+		const { record: r1 } = await this.web5.dwn.records.read({
 			from: this.protocolID,
 			message: {
 				filter: {
 					...this.didResolverFilter,
+					recipient: userDID,
 				},
 			},
 		});
 
-		console.log(record, "add record",this.didResolverFilter);
+		console.log(r1, "add record",this.didResolverFilter);
 
-		if (!record || record?.length == 0) {
-			const { record: resolverRecords } = await this.web5.dwn.records.create({
-				data: { userName:"astrolithDIDName",userDID: this.protocolID },
+		if (!r1 || r1?.length == 0) {
+			const {record } = await this.web5.dwn.records.create({
+				data: { userName: "astrolithDIDName", userDID: this.protocolID },
 				message: {
-					...this.didResolverFilter,
+					// ...this.didResolverFilter,
+					protocol:"http://astrolith.com",
+					schema:"http://astrolith.com/schemas/resolvers",
+					protocolPath:"didResolver",
+					dataFormat:"application/json",
 					published: true,
+					recipient: this.protocolID
 				},
 			});
-			resolverRecords?.send(this.protocolID);
-			console.log(resolverRecords,this.protocolID , "resolver records created");
+			console.log("ran before:", record,{...this.didResolverFilter});
 
-			return [resolverRecords.data?.json()];
+			// const { status:s1,status:s2 }= await Promise.all([ resolverRecords.send(this.protocolID),resolverRecords.send(userDID)]);
+			// const { status } = await record.send(this.protocolID);
+			console.log(record, this.protocolID, "resolver records created");
+			// const data = await record.data?.json();
+			return record;
 		}
 	}
 	//add DID user names
@@ -89,14 +98,15 @@ export class AstrolithDIDResolver {
 
 	//resolve DID
 	resolve = async (userDID) => {
-		const { record } = await this.web5.dwn.records.read({
+		const { record } = await this.web5.dwn.records.query({
+			from:this.protocolID,
 			message: {
 				filter: {
 					...this.didResolverFilter,
 				},
 			},
 		});
-console.log(didUserNames, "user name from did resolver111");
+		console.log(record, "user name from did resolver111");
 		const didUserNames = await Promise.all(record.map((el) => el.data?.json()));
 		console.log(didUserNames,"user name from did resolver")
 

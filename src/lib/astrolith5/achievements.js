@@ -5,12 +5,7 @@
     *@dev : This class manages users achievements over the course of the game for astrolith
     **/
 export class Achievements {
-        achievementFilter={
-        protocol:this.protocol,
-        protocolPath:"achievements",
-        schema:this.achievementSchema,
-    }
-    
+
     constructor(
         web5,
         protocol,
@@ -21,6 +16,13 @@ export class Achievements {
         this.protocol = protocol;
         this.web5 = web5;
         this.achievementSchema = achievementSchema;
+
+        this.achievementFilter = {
+            protocol,
+            protocolPath: "achievements",
+            schema: achievementSchema,
+        };
+
 
     }
 

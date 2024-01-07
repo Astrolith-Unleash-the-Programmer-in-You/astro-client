@@ -26,17 +26,18 @@ export class Certificates {
 		],
 	};
 
-	certificateFilter = {
-		protocol: this.protocol,
-		protocolPath: "certificates",
-		schema: this.certificateSchema,
-	};
+
 
 	constructor(web5, protocol, certificateSchema, protocolID) {
 		this.web5 = web5;
 		this.protocolID = protocolID;
 		this.protocol = protocol;
 		this.certificateSchema = certificateSchema;
+		this.certificateFilter = {
+				protocol,
+				protocolPath: "certificates",
+				schema: certificateSchema,
+			};
 	}
 
 	//get a user certificate

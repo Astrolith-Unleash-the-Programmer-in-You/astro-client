@@ -17,7 +17,12 @@ export class GameAccount {
         this.protocol = protocol;
         this.web5 = web5;
         this.gameAccountSchema = gameAccountSchema;
-        this.protocolID = protocolID;
+        this.protocolID = protocolID; 
+        this.gameAccountFilter = {
+            protocol,
+            protocolPath: "gameAccount",
+            schema: gameAccountSchema,
+        };
 
     }
 

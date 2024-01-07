@@ -20,11 +20,11 @@ export const AuthProvider = ({ children }) => {
     console.log(schema,"config")
     const resolver = new AstrolithDIDResolver(web5,protocol.astrolithProtocol.protocol,CONSTANTS.PROTOCOLDID,schema);
 
-    const resolvedProtocol = await resolver.readOrCreate()
-    console.log(resolvedProtocol)
+    const resolvedProtocol = await resolver.readOrCreate(connectedUserDID);
+    console.log(resolvedProtocol,"didResolve")
 
     const displayName = resolver.resolve(connectedUserDID);
-    console.log(displayName);
+    console.log(displayName,"this is display name");
 
     console.log(web5,connectedUserDID)
 

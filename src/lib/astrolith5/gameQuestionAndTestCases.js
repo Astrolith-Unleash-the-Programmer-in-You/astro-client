@@ -6,11 +6,7 @@
     *@dev : This class manages the game questions and test cases for astrolith
     **/
 export class GameQuestionAndTestCases {
-        gameQuestionAndTestCasesFilter={
-        protocol:this.protocol,
-        protocolPath:"gameQuestionAndTestCases",
-        schema:this.gameQTCSchema,
-    }
+
     constructor(
         web5,
         protocol,
@@ -20,6 +16,11 @@ export class GameQuestionAndTestCases {
         this.protocol = protocol;
         this.web5 = web5;
         this.gameQTCSchema = gameQTCSchema;
+        this.gameQuestionAndTestCasesFilter = {
+            protocol,
+            protocolPath: "gameQuestionAndTestCases",
+            schema: gameQTCSchema,
+        };
 
     }
 

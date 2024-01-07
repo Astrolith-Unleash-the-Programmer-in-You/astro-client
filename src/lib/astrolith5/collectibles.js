@@ -7,13 +7,7 @@ import { GameAccount } from "./gameAccounts";
  *@dev : This class manages users/protocol collectibles over the course of the game for astrolith
  **/
 export class Collectibles {
-	collectibleFilter = {
-		protocol: this.protocol,
-		protocolPath: "collectibles",
-		schema: this.collectibleSchema,
-		imageSchema: this.collectibleImageSchema,
-		gameAccountSchema: this.collectibleGameAccountSchema,
-	};
+
 
 	constructor(
 		web5,
@@ -29,6 +23,12 @@ export class Collectibles {
 		this.collectibleSchema = collectibleSchema;
 		this.collectibleSchema = collectibleImageSchema;
 		this.gameAccountSchema = gameAccountSchema;
+
+		this.collectibleFilter = {
+			protocol,
+			protocolPath: "collectibles",
+			schema: collectibleSchema,
+		};
 	}
 
 	//get a collectible from a user account
